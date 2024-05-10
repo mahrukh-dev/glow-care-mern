@@ -1,20 +1,35 @@
-.item{
-    width: 350px;
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
 }
 
 .item p{
     margin: 6px 0px;
 }
 
-.item-price{
-    /* display: flex;
-    gap: 20px; */
-    color: #283618;
+.item-details h3 {
     font-size: 18px;
-    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.item-details{
+    margin-top: 10px;
 }
 
 .item:hover{
     transform: scale(1.05);
     transition: 0.6s;
+}
+
+.item-details p {
+    font-size: 16px;
+    color:#283618;
 }

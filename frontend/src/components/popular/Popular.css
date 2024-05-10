@@ -21,17 +21,18 @@
 }
 
 .popular-item{
+    color: #283618;
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 30px;  
 }
 
 .popular-item .item{
-    width: calc(25% - 30px);
-    display: flex;
+    width: calc(20% - 30px);
     justify-content: center;
+    display: flex;
 }
 
 .popular-item .item img{
