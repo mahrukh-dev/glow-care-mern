@@ -12,11 +12,15 @@
     gap: 10px;
 }
 
-.nav-logo p{
+.nav-logo p {
     color: #283618;
-    font-size: 33px;
-    font-weight: 600;
+    font-family: "Dancing Script", cursive;
+    font-size: 36px;
+    font-weight: 900;
+    text-shadow: 1px 1px 2px #5F6C37;
+    -webkit-text-stroke: 0.5px #283618; 
 }
+
 
 .nav-logo img{
     width: 80px;
