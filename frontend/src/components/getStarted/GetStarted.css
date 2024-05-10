@@ -16,6 +16,12 @@
 
 .getstarted-left h2{
     color:#283618;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.getstarted-left p{
+    color:#283618;
     font-size: 100px;
     font-weight: 700;
 }
@@ -27,7 +33,7 @@
 }
 
 .getstarted-hand-icon img{
-    width: 100px;
+    width: 105px;
 }
 
 .getstarted-latest-btn{
@@ -39,8 +45,9 @@
     height: 70px;
     border-radius: 75px;
     margin-top: 30px;
-    background: #FEF9E0;
-    color: #283618;
+    background: #283618;
+    color: #FEF9E0;
     font-size: 22px;
     font-weight: 500;
 }
+
