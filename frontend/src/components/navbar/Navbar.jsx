@@ -14,10 +14,22 @@ export const Navbar = () => {
             <p>Glow Care</p>
         </div>
         <ul className="nav-menu">
-            <li onClick={()=>{setMenu("shop")}}>Shop{menu==="shop"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("bundles")}}>Bundles{menu==="bundles"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("reviews")}}>Reviews{menu==="reviews"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("contactus")}}>Contact Us{menu==="contactus"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("shop")}}>
+              <Link to='/'>Shop</Link>
+              {menu==="shop"?<hr/>:<></>}
+            </li>
+            <li onClick={()=>{setMenu("bundles")}}>
+              <Link to='/bundles'>Bundles</Link>
+              {menu==="bundles"?<hr/>:<></>}
+            </li>
+            <li onClick={()=>{setMenu("reviews")}}>
+              <Link to='/reviews'>Reviews</Link>
+              {menu==="reviews"?<hr/>:<></>}
+            </li>
+            <li onClick={()=>{setMenu("contactus")}}>
+              <Link to='/contact-us'>Contact Us</Link>
+              {menu==="contactus"?<hr/>:<></>}
+            </li>
         </ul>
         <div className="nav-login-cart">
             <button>Login</button>
