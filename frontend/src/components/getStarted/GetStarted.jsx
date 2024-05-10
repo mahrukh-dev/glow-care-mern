@@ -1,6 +1,5 @@
 import React from 'react'
 import './GetStarted.css'
-import hand_icon from '../assets/icons/cart_icon.png' //hand_icon
 import arrow_icon from '../assets/icons/cart_icon.png' //arrow_icon
 import skincare_image from '../assets/icons/cart_icon.png' //skin_care
 
@@ -11,11 +10,8 @@ export const GetStarted = () => {
     <div className='getstarted'>
       <div className="getstarted-left">
       <h2>NEW ARRIVALS ONLY</h2>
-      <div>
-        <div className="getstarted-hand-icon">
-          <p>new</p>
-          <img src={hand_icon} alt="" />
-        </div>
+      <div classname='getstarted-line'>
+        <p>new</p>
         <p>skincare</p>
         <p>for everyone</p>
       </div>
