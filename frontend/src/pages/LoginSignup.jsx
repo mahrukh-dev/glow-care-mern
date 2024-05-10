@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LoginSignup = () => {
+const LoginSignup = (params) => {
   return (
     <div>LoginSignup</div>
   )
