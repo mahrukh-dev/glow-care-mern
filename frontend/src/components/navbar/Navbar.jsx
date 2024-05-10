@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './Navbar.css'
 import logo from '../assets/logo/glow_care_logo.png'
 import cart_icon from '../assets/icons/cart_icon.png'
+import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
 
@@ -11,29 +12,35 @@ export const Navbar = () => {
     <div className='navbar'>
         <div className="nav-logo">
             <img src={logo} alt="logo" />
-            <p>Glow Care</p>
+            <Link to='/' style={{textDecoration: 'none'}}>
+              <p onClick={()=>{setMenu("shop")}}>Glow Care</p>
+            </Link>
         </div>
         <ul className="nav-menu">
             <li onClick={()=>{setMenu("shop")}}>
-              <Link to='/'>Shop</Link>
+              <Link to='/' style={{textDecoration: 'none'}}>Shop</Link>
               {menu==="shop"?<hr/>:<></>}
             </li>
             <li onClick={()=>{setMenu("bundles")}}>
-              <Link to='/bundles'>Bundles</Link>
+              <Link to='/bundles' style={{textDecoration: 'none'}}>Bundles</Link>
               {menu==="bundles"?<hr/>:<></>}
             </li>
             <li onClick={()=>{setMenu("reviews")}}>
-              <Link to='/reviews'>Reviews</Link>
+              <Link to='/reviews' style={{textDecoration: 'none'}}>Reviews</Link>
               {menu==="reviews"?<hr/>:<></>}
             </li>
             <li onClick={()=>{setMenu("contactus")}}>
-              <Link to='/contact-us'>Contact Us</Link>
+              <Link to='/contact-us' style={{textDecoration: 'none'}}>Contact Us</Link>
               {menu==="contactus"?<hr/>:<></>}
             </li>
         </ul>
         <div className="nav-login-cart">
-            <button>Login</button>
-            <img src={cart_icon} alt="cart" />
+            <Link to='/login' style={{textDecoration: 'none'}}>
+              <button>Login</button>
+            </Link>
+            <Link to='/cart' style={{textDecoration: 'none'}}>
+              <img src={cart_icon} alt="cart" />
+            </Link>
             <div className="nav-cart-count">0</div>
         </div>
     </div>
