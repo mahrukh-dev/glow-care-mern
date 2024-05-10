@@ -8,11 +8,11 @@ import skincare_image from '../assets/icons/cart_icon.png' //skin_care
 
 export const GetStarted = () => {
   return (
-    <div className='GetStarted'>
+    <div className='getstarted'>
       <div className="getstarted-left">
       <h2>NEW ARRIVALS ONLY</h2>
       <div>
-        <div className="getstarted-icon">
+        <div className="getstarted-hand-icon">
           <p>new</p>
           <img src={hand_icon} alt="" />
         </div>
