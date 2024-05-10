@@ -1,7 +1,8 @@
 import React from 'react'
 import './GetStarted.css'
-import arrow_icon from '../assets/icons/cart_icon.png' //arrow_icon
-import skincare_image from '../assets/icons/cart_icon.png' //skin_care
+import hand_icon from '../assets/icons/hand_icon.png' 
+import arrow_icon from '../assets/icons/arrow_icon.png' //arrow_icon
+import skincare_image from '../assets/icons/skincare_image.png' //skin_care
 
 //Main Image below the NavBar on Home Page
 
@@ -10,7 +11,7 @@ export const GetStarted = () => {
     <div className='getstarted'>
       <div className="getstarted-left">
       <h2>NEW ARRIVALS ONLY</h2>
-      <div classname='getstarted-line'>
+      <div>
         <p>new</p>
         <p>skincare</p>
         <p>for everyone</p>

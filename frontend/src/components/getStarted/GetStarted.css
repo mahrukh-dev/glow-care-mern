@@ -1,38 +1,33 @@
-.getstarted {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.getstarted{
+    height: 85vh;
     background: linear-gradient(180deg, #FEF9E0,#5F6C37 60%);
     padding: 20px;
   }
   
   .getstarted-left {
     flex: 1;
-  }
-  
-  .getstarted-right {
-    flex: 1;
-  }
-  
-  .getstarted h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .getstarted-line {
     display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    gap: 20px;
+    padding-left: 180px;
     align-items: center;
-  }
-  
-  .getstarted-line p {
-    margin: 0 5px;
-  }
-  
-  .getstarted-hand-icon img {
-    width: 50px;
-  }
-  
-  .getstarted-latest-btn {
+    line-height: 1.1;
+}
+
+.getstarted-left h2{
+    color:#283618;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.getstarted-left p{
+    color:#283618;
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.getstarted-latest-btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,18 +39,17 @@
     color: #FEF9E0;
     font-size: 18px;
     font-weight: 500;
-  }
-  
-  .getstarted-latest-btn > div {
-    
-    color: #FEF9E0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-  
-  .getstarted-latest-btn img {
-    margin-left: cpx;
-    width: 20px;
-  }
-  
+}
+
+.getstarted-latest-btn img{
+  height: 22px;
+  width: 22px;
+  color: #EEF9E0;
+}
+
+.getstarted-right{
+    margin-top: 30px;
+    margin-right: 50px;
+    align-items: center;
+}
+
