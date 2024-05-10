@@ -11,7 +11,7 @@ export const GetStarted = () => {
       <div className="getstarted-left">
       <h2>NEW ARRIVALS ONLY</h2>
       <div>
-        <p>new</p>
+        <p>latest</p>
         <p>skincare</p>
         <p>for everyone</p>
       </div>
