@@ -8,10 +8,10 @@ export const Navbar = () => {
     <div className='navbar'>
         <div className="nav-logo">
             <img src={logo} alt="logo" />
-            <p>SHOPPER</p>
+            <p>GLOW CARE</p>
         </div>
         <ul className="nav-menu">
-            <li>Shop</li>
+            <li>Shop<hr/></li>
             <li>Bundles</li>
             <li>Reviews</li>
             <li>Contact Us</li>
@@ -19,6 +19,7 @@ export const Navbar = () => {
         <div className="nav-login-cart">
             <button>Login</button>
             <img src={cart_icon} alt="cart" />
+            <div className="nav-cart-count">0</div>
         </div>
     </div>
   )
