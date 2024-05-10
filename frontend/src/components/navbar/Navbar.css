@@ -1,0 +1,95 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    box-shadow: 0 1px 3px -2px black;
+    background-color: #FEF9E0;
+}
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo p{
+    color: #283618;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.nav-logo img{
+    width: 80px;
+    height: 80px;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    color: #283618;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.nav-menu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+/* remove this later cuz i dont like the way it looks */
+.nav-menu hr{
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background: #5F6C37;
+}
+
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.nav-login-cart button{
+    width: 157px;
+    height: 58px;
+    outline: none;
+    border: 2px solid #283618;
+    border-radius: 20px;
+    color: #283618;
+    font-size: 20px;
+    font-weight: 500;
+    background: #FEF9E0;
+    cursor: pointer;
+}
+
+.nav-login-cart button:active{
+    background: #DDA15C;
+}
+
+.nav-login-cart img{
+    width: 40px;
+    height: 40px;
+}
+
+.nav-cart-count{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    border-radius: 11px;
+    font-size: 14px;
+    background: #5F6C37;
+    color: #FEF9E0;
+
+}
