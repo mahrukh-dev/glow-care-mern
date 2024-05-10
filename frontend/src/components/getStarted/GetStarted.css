@@ -33,7 +33,7 @@
 }
 
 .getstarted-hand-icon img{
-    width: 105px;
+    width: 70px;
 }
 
 .getstarted-latest-btn{
@@ -47,13 +47,13 @@
     margin-top: 30px;
     background: #283618;
     color: #FEF9E0;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
 }
 
 .getstarted-latest-btn img{
-  height: 25px;
-  width: 25px;
-  color: #FEF9E0;
+  height: 22px;
+  width: 22px;
+  color: #EEF9E0;
 }
 
