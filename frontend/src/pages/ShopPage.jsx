@@ -1,8 +1,11 @@
 import React from 'react'
+import { GetStarted } from '../components/getStarted/GetStarted'
 
 const ShopPage = () => {
   return (
-    <div>ShopPage</div>
+    <div>
+      <GetStarted />
+    </div>
   )
 }
 
