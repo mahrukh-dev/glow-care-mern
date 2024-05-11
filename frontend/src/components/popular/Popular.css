@@ -16,10 +16,8 @@
 }
 
 .popular hr{
-    width: 200px;
-    height: 6px;
-    border-radius: 10px;
-    background: #5F6C37;
+    width: 400px;
+    border-color: #283618;
 }
 
 .popular-item{
