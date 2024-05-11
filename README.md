@@ -7,9 +7,12 @@
 
 ###*Mah Rukh 210910*###
 - Navbar 
+- GetStarted
 
 ###*Javeria Rehman 210976*###
-- component
+- GetStarted
+- Item
+- Popular
 
 ###*Qurat ul Ain*###
 - component
