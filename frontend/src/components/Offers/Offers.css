@@ -5,10 +5,10 @@
     height: 60vh;
     display: flex;
     margin: auto;
-    padding: 0px 40px; /* Adjust the padding values here */
+    padding: 0px 40px; 
     margin-bottom: 150px;
     margin-top: 450px;
-    background: linear-gradient(to bottom, #C4C1A4 50%, #FFFFFF);
+    background: linear-gradient(180deg, #fef9e0, #5f6c37 60%);
 }
 
 
