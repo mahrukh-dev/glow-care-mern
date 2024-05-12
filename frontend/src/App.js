@@ -1,6 +1,8 @@
 import './App.css';
 import { Navbar } from './components/navbar/Navbar';
 
+import Footer from './components/footer/Footer';
+
 import ShopCategory from './pages/ShopCategory';
 import ShopPage from './pages/ShopPage';
 import Product from './pages/Product';
@@ -34,6 +36,7 @@ function App() {
           <Route path="/bundles" element={<Bundles /> } />
           <Route path="/reviews" element={<Reviews /> } />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
