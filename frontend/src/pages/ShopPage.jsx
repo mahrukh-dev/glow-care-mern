@@ -3,6 +3,7 @@ import { GetStarted } from '../components/getStarted/GetStarted'
 import Popular from '../components/popular/Popular'
 import Offers from '../components/Offers/Offers'
 import NewCollection from '../components/NewCollections/NewCollections'
+import NewsLetter from '../components/newsLetter/NewsLetter'
 
 const ShopPage = () => {
   return (
@@ -11,6 +12,7 @@ const ShopPage = () => {
       <Popular />
       <Offers />
       <NewCollection />
+      <NewsLetter />
     </div>
   )
 }
