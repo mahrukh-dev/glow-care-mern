@@ -13,6 +13,7 @@
 - GetStarted
 - Item
 - Popular
+- NewsLetter
 
 ###*Qurat ul Ain 210958*###
 - Offers
