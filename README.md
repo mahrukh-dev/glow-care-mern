@@ -15,5 +15,6 @@
 - Popular
 
 ###*Qurat ul Ain*###
-- component
+- Offers
+- New Collections
 
