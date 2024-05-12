@@ -16,5 +16,5 @@
 
 ###*Qurat ul Ain*###
 - Offers
-- New Collections
+- NewCollections
 
