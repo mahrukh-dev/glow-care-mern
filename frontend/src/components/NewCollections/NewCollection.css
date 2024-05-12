@@ -17,7 +17,7 @@
 }
 
 .new-collections hr{
-    width: 400px;
+    width: 300px;
     border-color: #283618;
 }
 
@@ -26,18 +26,18 @@
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px;  
 }
 
 .collections .item{
-    width: calc(20% - 30px);
+    width: calc(20% - 20px);
     justify-content: center;
     display: flex;
 }
 
 .collections .item img{
     max-width: 100%;
-    height: auto;
+    height: 200px;
     background: none;
 }
