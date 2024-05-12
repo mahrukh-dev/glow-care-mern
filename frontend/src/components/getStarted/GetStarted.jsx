@@ -1,7 +1,7 @@
 import React from 'react'
 import './GetStarted.css'
 import arrow_icon from '../assets/icons/arrow_icon.png' //arrow_icon
-import skincare_image from '../assets/icons/skincare_image.png' //skin_care
+import skincare_image from '../assets/icons/skincare_image.png' //skincare_image
 
 //Main Image below the NavBar on Home Page
 
