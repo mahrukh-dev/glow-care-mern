@@ -1,13 +1,13 @@
-import p1_img from './NC-1.jpg';
-import p2_img from './NC-2.jpg';
-import p3_img from './NC-3.jpg';
-import p4_img from './NC-4.jpg';
-import p5_img from './NC-5.jpg';
-import p6_img from './NC-6.jpg';
-import p7_img from './NC-7.jpg';
-import p8_img from './NC-8.jpg';
-import p9_img from './NC-9.jpg';
-import p10_img from './NC-10.jpg';
+import p1_img from './new1.png';
+import p2_img from './new2.png';
+import p3_img from './new3.png';
+import p4_img from './new4.png';
+import p5_img from './new5.png';
+import p6_img from './new6.png';
+import p7_img from './new7.png';
+import p8_img from './new8.png';
+import p9_img from './new9.png';
+import p10_img from './new10.png';
 
 let new_collection = [
     {
