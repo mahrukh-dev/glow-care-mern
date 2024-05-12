@@ -14,6 +14,7 @@
 - Item
 - Popular
 - NewsLetter
+- Footer
 
 ###*Qurat ul Ain 210958*###
 - Offers
