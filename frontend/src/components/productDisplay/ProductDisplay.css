@@ -16,11 +16,13 @@
 
 .productdisplay-img-list img {
     height: 163px;
+    object-fit: cover; /* Ensures the image covers the area without stretching */
 }
 
 .productdisplay-main-img {
-    width:486px;
+    width: 486px;
     height: 600px;
+    object-fit: cover; /* Ensures the image covers the area without stretching */
 }
 
 .productdisplay-right {
@@ -78,7 +80,7 @@
     cursor: pointer;
 }
 
-.productdisplay-right button{
+.productdisplay-right button {
     padding: 20px 40px;
     width: 200px;
     font-size: 16px;
@@ -90,10 +92,11 @@
     outline: none;
     cursor: pointer;
 }
-.productdisplay-right-category{
-    margin-top:10px;
 
+.productdisplay-right-category {
+    margin-top: 10px;
 }
-.productdisplay-right-category span{
+
+.productdisplay-right-category span {
     font-weight: 600;
 }
