@@ -23,6 +23,8 @@ body {
 
 .loginsignup-container h1 {
     margin: 20px 0px;
+    font-size: 36px; /* Increase font size */
+    font-weight: 700; /* Make text bold */
 }
 
 .loginsignup-fields {
@@ -54,6 +56,10 @@ body {
     cursor: pointer;
 }
 
+.loginsignup-container button:hover {
+    background: #4e5931; /* Optional: Add a hover effect for better UX */
+}
+
 .loginsignup-login {
     margin-top: 20px;
     color: #5c5c5c;
@@ -64,6 +70,7 @@ body {
 .loginsignup-login span {
     color: #ff4141;
     font-weight: 600;
+    cursor: pointer; /* Optional: Add cursor pointer to indicate clickability */
 }
 
 .loginsignup-agree {
@@ -76,4 +83,3 @@ body {
     font-size: 18px;
     font-weight: 500;
 }
-
