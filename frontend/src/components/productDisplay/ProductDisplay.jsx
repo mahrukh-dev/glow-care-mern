@@ -2,9 +2,12 @@ import React from 'react'
 import './ProductDisplay.css'
 import star_icon from '../assets/icons/star_icon.png'
 import star_dull_icon from '../assets/icons/star_dull_icon.png'
+import { shopContext } from '../context/shopContext';
 
 const ProductDisplay = (props) => {
     const { product } = props;
+    const { addToCart } = React.useContext(shopContext);
+    
   return (
     <div className="productdisplay">
         <div className="productdisplay-left">
@@ -44,7 +47,7 @@ const ProductDisplay = (props) => {
                     <div>500ml</div>
                 </div>
             </div>
-            <button>Add To Cart</button>
+            <button onClick={()=>{addToCart(product.id)}}>Add To Cart</button>
             <p className='productdisplay-right-category'><span>Category: </span>Eyes, Serum</p>
             <p className='productdisplay-right-category'><span>Tags: </span>Skincare, eyecare</p>
         </div>
