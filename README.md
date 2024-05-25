@@ -10,6 +10,8 @@
 - GetStarted
 - shopContext -- provides product data to all pages in index.js
 - ShopCategory
+- Breadcrums component
+- Product Display Component
 
 ### *Javeria Rehman 210976*
 - GetStarted
