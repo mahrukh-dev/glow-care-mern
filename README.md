@@ -3,20 +3,21 @@
 - cd frontend 
 - npm start
 
-***FULL STACK WEB DEVELOPMENT PROJECT***
+# FULL STACK WEB DEVELOPMENT PROJECT
 
-###*Mah Rukh 210910*###
+### *Mah Rukh 210910*
 - Navbar 
 - GetStarted
+- shopContext -- provides product data to all pages in index.js
 
-###*Javeria Rehman 210976*###
+### *Javeria Rehman 210976*
 - GetStarted
 - Item
 - Popular
 - NewsLetter
 - Footer
 
-###*Qurat ul Ain 210958*###
+### *Qurat ul Ain 210958*
 - Offers
 - NewCollections
 
