@@ -12,6 +12,7 @@
 - ShopCategory
 - Breadcrums component
 - Product Display Component
+- Product Page
 
 ### *Javeria Rehman 210976*
 - GetStarted
