@@ -8,7 +8,7 @@ const ShopCategory = (props) => {
   const { all_products } = React.useContext(ShopContext);
   return (
     <div className="shop-category">
-      <img src={props.banner} alt="" />
+      <img className='shopcategory-banner' src={props.banner} alt="" />
       <div className='shopcategory-indextSort'>
         <p>
           <span>Showing 1-12</span> out of 36 products
