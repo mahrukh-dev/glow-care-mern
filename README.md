@@ -9,6 +9,7 @@
 - Navbar 
 - GetStarted
 - shopContext -- provides product data to all pages in index.js
+- ShopCategory
 
 ### *Javeria Rehman 210976*
 - GetStarted
