@@ -15,6 +15,10 @@ import ContactUs from './pages/ContactUs';
 import Bundles from './pages/Bundles';
 import Reviews from './pages/Reviews';
 
+import categoryOneBanner from './components/assets/images/category_1.jpg';
+import categoryTwoBanner from './components/assets/images/category_2.jpg';
+import categoryThreeBanner from './components/assets/images/category_3.jpg';
+
 function App() {
   return (
     <div className="App">
@@ -23,9 +27,11 @@ function App() {
         <Routes>
           <Route path="/" element={<ShopPage />} />
           <Route path="/shop" element={<ShopPage />} />
-          <Route path="/shopcategory1" element={<ShopCategory category="category1"/>} />
-          <Route path="/shopcategory2" element={<ShopCategory category="category2"/>} />
-          <Route path="/shopcategory3" element={<ShopCategory category="category3"/>} />
+          <Route path="/shopcategory1" element={
+            <ShopCategory category="Category 1" banner={categoryOneBanner}/>
+            } />
+          <Route path="/shopcategory2" element={<ShopCategory category="Category 2" banner={categoryTwoBanner}/>} />
+          <Route path="/shopcategory3" element={<ShopCategory category="Category 3" banner={categoryThreeBanner}/>} />
           <Route path="product/" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>
