@@ -5,11 +5,11 @@ export const ShopContext = React.createContext(null);
 
 const getDefaultCart = () => {
     let cart = {};
-    for (let index = 0; index < all_products.length+1; index++) {
+    for (let index = 0; index < all_products.length + 1; index++) {
         cart[index] = 0;
     }
     return cart;
-}
+}   
 
 const ShopContextProvider = ( props ) => {
     const [cartItems, setCartItems] = React.useState(getDefaultCart());
@@ -23,6 +23,8 @@ const ShopContextProvider = ( props ) => {
     }
 
     const contextValue = { all_products, cartItems, addToCart, removeFromCart};
+ 
+
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}
