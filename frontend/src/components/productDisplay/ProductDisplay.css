@@ -93,10 +93,21 @@
     cursor: pointer;
 }
 
+.productdisplay-right-description{
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
 .productdisplay-right-category {
     margin-top: 10px;
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .productdisplay-right-category span {
     font-weight: 600;
 }
+

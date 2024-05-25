@@ -32,7 +32,8 @@ const ProductDisplay = (props) => {
                 ${product.price}
             </div>
             <div className="productdisplay-right-description">
-                A short description about the product
+            <p>This is a high-quality skincare product.
+                It helps to maintain your skin's health and vitality.</p>
             </div>
             <div className="productdisplay-right-size">
                 <h1>Select Size</h1>
@@ -44,8 +45,8 @@ const ProductDisplay = (props) => {
                 </div>
             </div>
             <button>Add To Cart</button>
-            <p className='productdisplay-right-category'><span>Category :</span> Eyes, Serum</p>
-            <p className='productdisplay-right-category'><span>Tags :</span> Skincare, eyecare</p>
+            <p className='productdisplay-right-category'><span>Category: </span>Eyes, Serum</p>
+            <p className='productdisplay-right-category'><span>Tags: </span>Skincare, eyecare</p>
         </div>
     </div>
   )
