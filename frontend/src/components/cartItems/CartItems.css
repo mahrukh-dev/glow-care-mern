@@ -37,8 +37,6 @@
 .cartitems-quantity{
     width: 64px;
     height: 50px;
-    border: 2px solid #FEF9E0;
-    background: #FEF9E0;
 }
 
 .cartitems-down{
@@ -100,6 +98,7 @@
 }
 
 .cartitems-promobox button{
+    margin-top: 35px;
     width: 170px;
     height: 58px;
     background: #283618;
