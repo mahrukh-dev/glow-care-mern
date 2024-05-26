@@ -43,6 +43,7 @@
 - Admin Panel - sidebar css
 - Admin Panel - add product css
 - Admin Panel - List Product
+- addToCart endpoint
 
 ### *Qurat ul Ain 210958*
 - Offers
