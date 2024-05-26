@@ -28,7 +28,7 @@
 - Css File of Shopcategory
 - Css File of BreadCrums
 - Functions added in ShopContext
-- media queries for responsiveness added in navbar, getstarted, popular ,offers, news collection, footer, shopcategory,loginsignup,breadcrums,productdisplay,description,related products
+- media queries for responsiveness added in navbar, getstarted, popular ,offers, news collection, footer, shopcategory,loginsignup,breadcrums,productdisplay,description,related products,cartitems
   
   
 
