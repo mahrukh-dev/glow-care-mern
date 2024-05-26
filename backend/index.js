@@ -29,13 +29,7 @@ const upload = multer({ storage: storage });
 
 // creating upload endpoint for images
 app.use('/images', express.static('upload/images'));
-app.post('/upload', upload.single('product'), (req, res) => {
-    res.json({
-        success: 1,
-        image_url: `http://localhost:${port}/images/${req.file.filename}`
-    });
 
-});
 
 // Schema for Creating Products
 const productSchema = new mongoose.Schema({
@@ -49,39 +43,39 @@ const productSchema = new mongoose.Schema({
     available: { type: Boolean, default: true },
 });
 const Product = mongoose.model('Product', productSchema);
-
-// API for Creating Products
-app.post('/addproducts', async (req, res) => {
-    let products = await Product.find({});
-    let id;
-    if(products.length>0){
-        let lastProductArray = products.slice(-1);
-        let lastProduct = lastProductArray[0];
-        id = lastProduct.id + 1;
-
+app.post('/upload', upload.single('image'), (req, res) => {
+    if (req.file) {
+        res.json({
+            success: 1,
+            image_url: `http://localhost:${port}/images/${req.file.filename}`
+        });
+    } else {
+        res.status(500).json({ success: 0, message: 'File upload failed' });
     }
-    else{
-        id = 1;
-    }
-    const product = new Product({
-        id: id,
-        name: req.body.name,
-        image: req.body.image,
-        category: req.body.category,
-        price: req.body.price,
-        description: req.body.description,
-    });
-    console.log(product);
-    //error handling
-
-    await product.save();
-    console.log("Product saved");
-    res.json({
-        success: true,
-        name: req.body.name,
-    });
-
 });
+
+app.post('/addproducts', async (req, res) => {
+    try {
+        let products = await Product.find({});
+        let id = products.length > 0 ? products[products.length - 1].id + 1 : 1;
+
+        const product = new Product({
+            id,
+            name: req.body.name,
+            image: req.body.image,
+            category: req.body.category,
+            price: req.body.price,
+            description: req.body.description,
+        });
+
+        await product.save();
+        res.json({ success: true, name: req.body.name });
+    } catch (error) {
+        console.error('Error adding product:', error);
+        res.status(500).json({ success: false, message: 'Failed to add product' });
+    }
+});
+
 
 // creating API for deleting product
 app.post('/removeproduct', async (req, res) => {
