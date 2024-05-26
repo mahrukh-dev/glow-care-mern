@@ -41,6 +41,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/recommendations" element={<Bundles /> } />
           <Route path="/reviews" element={<Reviews /> } />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
         <Footer/>
       </BrowserRouter>
