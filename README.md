@@ -3,6 +3,14 @@
 - cd frontend 
 - npm start
 
+# backend
+- npm init
+- npm install express
+- npm install jsonwebtoken
+- npm install mongoose
+- npm install multer - to store images in backend folder using admin panel
+- npm install cors - permission to access backend
+
 # FULL STACK WEB DEVELOPMENT PROJECT
 
 ### *Mah Rukh 210910*
@@ -28,6 +36,11 @@
 ### *Qurat ul Ain 210958*
 - Offers
 - NewCollections
+- Css File of Product Display
+- Css File of Shopcategory
+- Css File of BreadCrums
+- Functions added in ShopContext
+- media queries for responsiveness added in navbar, getstarted, popular ,offers, news collection, footer, shopcategory,loginsignup,breadcrums,productdisplay,description,related products,cartitems
 - Related Products Css
 - Products Display Css
 - Breadcrums Css
