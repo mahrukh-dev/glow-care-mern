@@ -14,6 +14,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import ContactUs from './pages/ContactUs';
 import Bundles from './pages/Bundles';
 import Reviews from './pages/Reviews';
+import PaymentPage from './pages/PaymentPage';
 
 import categoryOneBanner from './components/assets/images/category_1.jpg';
 import categoryTwoBanner from './components/assets/images/category_2.jpg';
@@ -41,7 +42,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/recommendations" element={<Bundles /> } />
           <Route path="/reviews" element={<Reviews /> } />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment" element={<PaymentPage />} />
         </Routes>
         <Footer/>
       </BrowserRouter>

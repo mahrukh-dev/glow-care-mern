@@ -1,7 +1,9 @@
+// src/pages/PaymentPage.jsx
+
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Payment = () => {
+const PaymentPage = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -26,7 +28,7 @@ const Payment = () => {
       const authToken = await authenticate();
       const orderId = await createOrder(authToken);
       const paymentToken = await generatePaymentKey(authToken, orderId);
-      const iframeSource = "https://pakistan.paymob.com/api/acceptance/iframes/148638?payment_token=${paymentToken}";
+      const iframeSource = `https://pakistan.paymob.com/api/acceptance/iframes/148638?payment_token=${paymentToken}`;
       setIframeSourceUrl(iframeSource);
       setIsIFrameVisible(true);
       setSubmitted(true);
@@ -100,7 +102,6 @@ const Payment = () => {
             <label htmlFor="phoneNumber">Phone Number:</label>
             <input type="tel" className="form-control" id="phoneNumber" value={formData.phoneNumber} onChange={handleChange} />
           </div>
-          
           <div className="form-group">
             <label htmlFor="amount">Amount:</label>
             <input type="number" className="form-control" id="amount" value={formData.amount} onChange={handleChange} />
@@ -116,4 +117,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default PaymentPage;

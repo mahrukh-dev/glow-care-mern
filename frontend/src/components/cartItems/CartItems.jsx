@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import './CartItems.css';
 import { ShopContext } from '../../context/shopContext';
 import remove_icon from '../assets/icons/remove_icon.png';
 
 const CartItems = () => {
+    const navigate = useNavigate();
+
+    const navigateToPayment = () => {
+      navigate('/payment');
+    };
     const { all_products, cartItems, removeFromCart, getTotalCartAmount } = React.useContext(ShopContext);
     return (
         <div className="cartitems">
@@ -53,7 +59,7 @@ const CartItems = () => {
                         <h3>${getTotalCartAmount()}</h3>
                     </div>
                 </div>
-                <button>PROCEED TO CHECKOUT</button>
+                <button onClick={navigateToPayment}>PROCEED TO CHECKOUT</button>
             </div>
             <div className="cartitems-promocode">
                 <p>
@@ -61,7 +67,7 @@ const CartItems = () => {
                 </p>
                 <div className="cartitems-promobox">
                     <input type="text" placeholder="promo code"/>
-                    <button>Submit</button>
+                    <button >Submit</button>
                 </div>
             </div>   
            </div>
