@@ -143,6 +143,7 @@ app.post('/getcart', fetchUser, async (req, res) => {
     res.json(userData.cartData);
 });
 
+
 //USER SCHEMA
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
