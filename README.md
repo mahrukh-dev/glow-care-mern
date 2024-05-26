@@ -40,6 +40,7 @@
 - Cart Items
 - MongoDB connection
 - Admin Panel - navbar
+- Admin Panel - sidebar css
 
 ### *Qurat ul Ain 210958*
 - Offers
