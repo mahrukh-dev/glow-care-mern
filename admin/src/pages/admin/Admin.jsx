@@ -3,6 +3,7 @@ import './Admin.css';
 import Sidebar from "../../components/sidebar/Sidebar";
 import AddProduct from "../../components/addProduct/AddProduct";
 import ListProduct from "../../components/listProduct/ListProduct";
+import PatientRequest from "../../components/PatientRequest/PatientRequest";
 import {Routes, Route} from 'react-router-dom';
 
 
