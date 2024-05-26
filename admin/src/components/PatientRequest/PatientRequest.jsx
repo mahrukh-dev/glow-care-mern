@@ -1,3 +1,4 @@
+// src/components/PatientRequest.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './PatientRequest.css';
@@ -68,7 +69,7 @@ const PatientRequest = () => {
             {selectedRequest && (
                 <div className="recommendation-section">
                     <h2>Recommend Products for {selectedRequest.name}</h2>
-                    <div>
+                    <div className="products-list">
                         {products.map(product => (
                             <div key={product.id}>
                                 <input

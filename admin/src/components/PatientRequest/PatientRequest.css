@@ -1,3 +1,4 @@
+/* PatientRequest.css */
 .admin-panel {
     display: flex;
     flex-direction: column;
@@ -5,34 +6,47 @@
     width: 100%;
     padding: 20px;
     background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px 20px;
 }
 
 .admin-panel h1 {
     color: #283618;
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
 .request-list {
     width: 100%;
     margin-bottom: 20px;
+    list-style: none;
+    padding: 0;
 }
 
 .request-list li {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     color: #283618;
-    font-size: 15px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.request-list li:hover {
+    background-color: #ececec;
 }
 
 .request-list button {
-    background-color: #6b705c;
+    background-color: #283618;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 7px 15px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -47,30 +61,56 @@
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f9f9f9;
 }
 
 .recommendation-section h2 {
     color: #283618;
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.recommendation-section .products-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.recommendation-section .products-list div {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
 }
 
-.recommendation-section textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    font-size: 14px;
+.recommendation-section .products-list input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.recommendation-section .products-list label {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
 }
 
 .recommendation-section button {
-    background-color: #6b705c;
+    background-color: #283618;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 25px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 20px;
 }
 
 .recommendation-section button:hover {
@@ -80,18 +120,19 @@
 @media (max-width: 800px) {
     .admin-panel {
         width: 95%;
-        padding: 10px;
+        padding: 15px;
     }
 
     .request-list li {
-        font-size: 12px;
+        font-size: 14px;
+        padding: 10px;
     }
 
-    .recommendation-section textarea {
-        font-size: 12px;
+    .recommendation-section h2 {
+        font-size: 20px;
     }
 
     .recommendation-section button {
-        padding: 8px 16px;
+        padding: 8px 20px;
     }
 }
