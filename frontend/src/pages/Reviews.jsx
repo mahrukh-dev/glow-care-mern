@@ -1,6 +1,7 @@
 // src/components/UserRecommendations.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './css/Reviews.css';
 import { jwtDecode } from "jwt-decode";
 
 const Reviews = () => {
@@ -43,7 +44,7 @@ const Reviews = () => {
     if (error) return <div>{error}</div>;
 
     return (
-        <div>
+        <div className='user-recommendations-container'>
             <h1>Admin Recommendation</h1>
             {recommendation ? (
                 <div>
