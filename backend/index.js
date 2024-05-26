@@ -95,6 +95,19 @@ app.get('/allproducts', async (req, res) => {
 });
 
 
+//USER SCHEMA
+const userSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, unique: true, required: true},
+    password: { type: String, required: true },
+    cartData : { type: Object, default: {} },
+    date: { type: Date, default: Date.now }
+});
+const User = mongoose.model('Users', userSchema);
+
+//API for user registration
+app.post('/register', async (req, res) => {});
+
 app.listen(port, (error) => {
     if (!error) {
         console.log('Server is running on port: ', port);
