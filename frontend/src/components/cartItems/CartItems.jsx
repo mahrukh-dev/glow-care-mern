@@ -1,10 +1,10 @@
 import React from "react";
 import './CartItems.css';
-import { shopContext } from '../context/shopcontext';
+import { ShopContext } from '../../context/shopContext';
 import remove_icon from '../assets/icons/remove_icon.png';
 
 const CartItems = () => {
-    const { all_products, cartItems, removeFromCart, getTotalCartAmount } = React.useContext(shopContext);
+    const { all_products, cartItems, removeFromCart, getTotalCartAmount } = React.useContext(ShopContext);
     return (
         <div className="cartitems">
             <div className="cartitems-format-main">
