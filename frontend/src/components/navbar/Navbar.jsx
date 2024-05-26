@@ -25,7 +25,8 @@ export const Navbar = () => {
               <p onClick={()=>{setMenu("shop")}}>Glow Care</p>
             </Link>
         </div>
-         <img onClick ={dropdown_toggle} src = {nav_dropdown} alt=" " />
+
+         <img className = 'nav-dropdown' onClick ={dropdown_toggle} src = {nav_dropdown} alt=" " />
 
         <ul ref={menuRef} className="nav-menu">
             <li onClick={()=>{setMenu("shop")}}>
