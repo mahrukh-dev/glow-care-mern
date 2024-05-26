@@ -26,7 +26,8 @@
 - NewCollections
 - Css File of Product Display
 - Css File of Shopcategory
-- Css File of ShopCategory
+- Css File of BreadCrums
 - Functions added in ShopContext
-- 
+- media queries for responsiveness added in navbar, getstarted, popular ,offers, news collection
+  
 
