@@ -218,7 +218,7 @@ app.post('/login', async (req, res) => {
 // creating endpoint for new collections
 app.get('/newcollection', async (req, res) => {
     let products = await Product.find({});
-    let newCollection = products.slice(1).slice(-8);
+    let newCollection = products.slice(-5);
     console.log("new collection fetched");
     res.send(newCollection);
 });
@@ -226,7 +226,7 @@ app.get('/newcollection', async (req, res) => {
 // creating endpoint for popular
 app.get('/popular', async (req, res) => {
     let products = await Product.find({});
-    let popular = products.slice(1).slice(-6);
+    let popular = products.slice(-5);
     console.log("popular fetched");
     res.send(popular);
 });
