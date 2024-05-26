@@ -24,4 +24,9 @@
 ### *Qurat ul Ain 210958*
 - Offers
 - NewCollections
+- Css File of Product Display
+- Css File of Shopcategory
+- Css File of ShopCategory
+- Functions added in ShopContext
+- 
 
