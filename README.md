@@ -44,6 +44,7 @@
 - Admin Panel - add product css
 - Admin Panel - List Product
 - addToCart endpoint
+- Admin Panel - Patient Requests
 
 ### *Qurat ul Ain 210958*
 - Offers
