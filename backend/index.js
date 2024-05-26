@@ -143,7 +143,6 @@ app.post('/getcart', fetchUser, async (req, res) => {
     res.json(userData.cartData);
 });
 
-
 //USER SCHEMA
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -190,6 +189,74 @@ app.post('/signup', async (req, res) => {
 
 });
 
+const AdminRecommendationSchema = new mongoose.Schema({
+    userRequestId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserRequest' },
+    recommendedProducts: [String],
+});
+
+const UserRequestSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    skinType: String,
+    issues: String,
+    userId: String,
+    status: { type: String, default: 'pending' },
+});
+const userRequest= mongoose.model('UserRequest', UserRequestSchema);
+const userRecommendation = mongoose.model('AdminRecommendation', AdminRecommendationSchema);
+const AdminRecommendation = mongoose.model('AdminRecommendation', AdminRecommendationSchema);
+
+// Create a new user request
+app.post('/createrequest', async (req, res) => {
+    const { name, email, skinType, issues,userId } = req.body;
+    console.log("body",req.body);
+    const newUserRequest = new userRequest({ name, email, skinType, issues,userId });
+    await newUserRequest.save();
+    res.status(201).send(newUserRequest);
+});
+// Get all user requests
+app.get('/getrequest', async (req, res) => {
+    const userRequests = await userRequest.find();
+    res.status(200).send(userRequests);
+});
+
+// Create a new recommendation
+app.post('/:id', async (req, res) => {
+    const { recommendedProducts } = req.body;
+    const userRequestId = req.params.id;
+
+    const newRecommendation = new AdminRecommendation({ userRequestId, recommendedProducts });
+    await newRecommendation.save();
+
+    // Update the status of the user request
+    await userRequest.findByIdAndUpdate(userRequestId, { status: 'reviewed' });
+
+    res.status(201).send(newRecommendation);
+});
+// Get recommendations for a specific user request
+app.get('/:id', async (req, res) => {
+    const userRequestId = req.params.id;
+    const recommendation = await AdminRecommendation.findOne({ userRequestId }).populate('userRequestId');
+    res.status(200).send(recommendation);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //User login endpoint
 app.post('/login', async (req, res) => {
     let user = await Users.findOne({
@@ -218,7 +285,7 @@ app.post('/login', async (req, res) => {
 // creating endpoint for new collections
 app.get('/newcollection', async (req, res) => {
     let products = await Product.find({});
-    let newCollection = products.slice(-5);
+    let newCollection = products.slice(1).slice(-8);
     console.log("new collection fetched");
     res.send(newCollection);
 });
@@ -226,7 +293,7 @@ app.get('/newcollection', async (req, res) => {
 // creating endpoint for popular
 app.get('/popular', async (req, res) => {
     let products = await Product.find({});
-    let popular = products.slice(-5);
+    let popular = products.slice(1).slice(-6);
     console.log("popular fetched");
     res.send(popular);
 });
