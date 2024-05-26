@@ -42,6 +42,7 @@
 - Admin Panel - navbar
 - Admin Panel - sidebar css
 - Admin Panel - add product css
+- Admin Panel - List Product
 
 ### *Qurat ul Ain 210958*
 - Offers
