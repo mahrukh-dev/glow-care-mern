@@ -52,8 +52,19 @@ const Product = mongoose.model('Product', productSchema);
 
 // API for Creating Products
 app.post('/addproducts', async (req, res) => {
+    let products = await Product.find({});
+    let id;
+    if(products.length>0){
+        let lastProductArray = products.slice(-1);
+        let lastProduct = lastProductArray[0];
+        id = lastProduct.id + 1;
+
+    }
+    else{
+        id = 1;
+    }
     const product = new Product({
-        id: req.body.id,
+        id: id,
         name: req.body.name,
         image: req.body.image,
         category: req.body.category,
