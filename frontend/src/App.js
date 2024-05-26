@@ -39,7 +39,7 @@ function App() {
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/signup" element={<LoginSignup />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/bundles" element={<Bundles /> } />
+          <Route path="/recommendations" element={<Bundles /> } />
           <Route path="/reviews" element={<Reviews /> } />
         </Routes>
         <Footer/>
