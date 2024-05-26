@@ -9,13 +9,13 @@ import nav_dropdown from '../assets/icons/dropdown_icon.png'
 export const Navbar = () => {
 
   const [menu, setMenu] = useState("shop");
-  const {getTotalCartItems} = useContext(ShopContext);
+  const { getTotalCartItems } = useContext(ShopContext);
   const menuRef = useRef();
 
   const dropdown_toggle = (e) => {
-    menuRef.current.classList.toggle('nav-menu-visible');
-    e.target.classList.toggle('open'); 
-  }
+      menuRef.current.classList.toggle('nav-menu-visible');
+       e.target.classList.toggle('open');
+}
 
   return (
     <div className='navbar'>

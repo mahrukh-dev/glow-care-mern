@@ -32,6 +32,7 @@
 - Related Products
 - shopContext -- quantity of product added on card
 - Cart Items
+- MongoDB connection
 
 ### *Qurat ul Ain 210958*
 - Offers
