@@ -1,0 +1,97 @@
+.admin-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel h1 {
+    color: #283618;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.request-list {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.request-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #283618;
+    font-size: 15px;
+}
+
+.request-list button {
+    background-color: #6b705c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.request-list button:hover {
+    background-color: #a5a58d;
+}
+
+.recommendation-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.recommendation-section h2 {
+    color: #283618;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.recommendation-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.recommendation-section button {
+    background-color: #6b705c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.recommendation-section button:hover {
+    background-color: #a5a58d;
+}
+
+@media (max-width: 800px) {
+    .admin-panel {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .request-list li {
+        font-size: 12px;
+    }
+
+    .recommendation-section textarea {
+        font-size: 12px;
+    }
+
+    .recommendation-section button {
+        padding: 8px 16px;
+    }
+}

@@ -1,6 +1,7 @@
 // src/components/AdminPanel.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './PatientRequest.css';
 
 const PatientRequest = () => {
     const [requests, setRequests] = useState([]);
@@ -31,7 +32,7 @@ const PatientRequest = () => {
             alert('Recommendation submitted successfully');
             setSelectedRequest(null);
             setRecommendedProducts('');
-            const response = await axios.get('http://localhost:4000/${selectedRequest.userId}');
+            const response = await axios.get(`http://localhost:4000/${selectedRequest.userId}`);
             setRequests(response.data);
         } catch (err) {
             console.error(err);
@@ -40,19 +41,19 @@ const PatientRequest = () => {
     };
 
     return (
-        <div>
+        <div className="admin-panel">
             <h1>Admin Panel</h1>
-            <ul>
+            <ul className="request-list">
                 {requests.map((request) => (
                     <li key={request._id}>
-                        {request.name} - {request.email} - {request.status}-{request._id}
+                        {request.name} - {request.email} - {request.status} - {request._id}
                         <button onClick={() => handleSelectRequest(request)}>Recommend</button>
                     </li>
                 ))}
             </ul>
 
             {selectedRequest && (
-                <div>
+                <div className="recommendation-section">
                     <h2>Recommend Products for {selectedRequest.name}</h2>
                     <textarea
                         value={recommendedProducts}

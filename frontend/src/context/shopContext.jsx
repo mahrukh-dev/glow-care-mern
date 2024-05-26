@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 
+
 export const ShopContext = React.createContext(null);
 
 const getDefaultCart = () => {
