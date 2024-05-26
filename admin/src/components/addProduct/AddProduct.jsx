@@ -29,12 +29,11 @@ const AddProduct = () => {
         </div>
         <div className="addproduct-itemfield">
             <label htmlFor='file-input'>
-                <img src={upload_area} className='addproduct-thumnail-img' alt=""/>
+                <img src={upload_area} className='addproduct-thumbnail-img' alt="Upload Thumbnail"/>
             </label>
-            <imput type='file' name='image' id='file-input' hidden/>
+            <input type='file' name='image' id='file-input' hidden/>
         </div>
         <button className="addproduct-btn">Add Product</button>
-
     </div>
   )
 }
