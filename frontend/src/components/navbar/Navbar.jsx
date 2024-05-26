@@ -13,9 +13,9 @@ export const Navbar = () => {
   const menuRef = useRef();
 
   const dropdown_toggle = (e) => {
-      menuRef.current.classList.toggle('nav-menu-visible');
-       e.target.classList.toggle('open');
-}
+    menuRef.current.classList.toggle('nav-menu-visible');
+    e.target.classList.toggle('open'); 
+  }
 
   return (
     <div className='navbar'>
