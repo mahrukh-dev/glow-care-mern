@@ -1,19 +1,26 @@
-// src/components/AdminPanel.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const PatientRequest = () => {
     const [requests, setRequests] = useState([]);
     const [selectedRequest, setSelectedRequest] = useState(null);
-    const [recommendedProducts, setRecommendedProducts] = useState('');
+    const [recommendedProducts, setRecommendedProducts] = useState([]);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
         const fetchRequests = async () => {
             const response = await axios.get('http://localhost:4000/getrequest');
-            console.log(response.data);
             setRequests(response.data);
         };
         fetchRequests();
+    }, []);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const response = await axios.get('http://localhost:4000/allproducts');
+            setProducts(response.data);
+        };
+        fetchProducts();
     }, []);
 
     const handleSelectRequest = (request) => {
@@ -24,18 +31,24 @@ const PatientRequest = () => {
         if (!selectedRequest) return;
 
         try {
-            console.log(selectedRequest.userId)
             await axios.post(`http://localhost:4000/${selectedRequest.userId}`, {
-                recommendedProducts: recommendedProducts.split(','),
+                recommendedProducts: recommendedProducts,
             });
             alert('Recommendation submitted successfully');
             setSelectedRequest(null);
-            setRecommendedProducts('');
-            const response = await axios.get('http://localhost:4000/${selectedRequest.userId}');
-            setRequests(response.data);
+            setRecommendedProducts([]);
         } catch (err) {
             console.error(err);
             alert('Failed to submit recommendation');
+        }
+    };
+
+    const handleProductCheckboxChange = (productId) => {
+        const index = recommendedProducts.indexOf(productId);
+        if (index === -1) {
+            setRecommendedProducts([...recommendedProducts, productId]);
+        } else {
+            setRecommendedProducts(recommendedProducts.filter(id => id !== productId));
         }
     };
 
@@ -54,11 +67,19 @@ const PatientRequest = () => {
             {selectedRequest && (
                 <div>
                     <h2>Recommend Products for {selectedRequest.name}</h2>
-                    <textarea
-                        value={recommendedProducts}
-                        onChange={(e) => setRecommendedProducts(e.target.value)}
-                        placeholder="Comma separated product names"
-                    />
+                    <div>
+                        {products.map(product => (
+                            <div key={product.id}>
+                                <input
+                                    type="checkbox"
+                                    id={product.id}
+                                    checked={recommendedProducts.includes(product.id)}
+                                    onChange={() => handleProductCheckboxChange(product.id)}
+                                />
+                                <label htmlFor={product.id}>{product.name}</label>
+                            </div>
+                        ))}
+                    </div>
                     <button onClick={handleRecommend}>Submit Recommendation</button>
                 </div>
             )}
