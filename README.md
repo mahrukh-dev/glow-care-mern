@@ -41,6 +41,7 @@
 - MongoDB connection
 - Admin Panel - navbar
 - Admin Panel - sidebar css
+- Admin Panel - add product css
 
 ### *Qurat ul Ain 210958*
 - Offers
