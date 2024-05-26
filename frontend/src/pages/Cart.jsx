@@ -1,10 +1,10 @@
 import React from 'react'
-import CartItems from '../components/cartItems/CartItems'
+import CartItems from '../components/cartItems/CartItems' 
 
-const Cart = (params) => {
+const Cart = () => {
   return (
     <div>
-<CartItems/>
+      <CartItems />
     </div>
   )
 }

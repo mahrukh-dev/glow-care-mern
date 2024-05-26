@@ -20,15 +20,15 @@
 - Popular
 - NewsLetter
 - Footer
+- Description Box
+- Related Products
+- shopContext -- quantity of product added on card
+- Cart Items
 
 ### *Qurat ul Ain 210958*
 - Offers
 - NewCollections
-- Css File of Product Display
-- Css File of Shopcategory
-- Css File of BreadCrums
-- Functions added in ShopContext
-- media queries for responsiveness added in navbar, getstarted, popular ,offers, news collection, footer, shopcategory,loginsignup,breadcrums,productdisplay,description,related products,cartitems
-  
-  
+- Related Products Css
+- Products Display Css
+- Breadcrums Css
 
