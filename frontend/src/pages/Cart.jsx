@@ -1,7 +1,7 @@
 import React from 'react'
 import CartItems from '../components/cartItems/CartItems' 
 
-const Cart = () => {
+const Cart = (params) => {
   return (
     <div>
       <CartItems />
