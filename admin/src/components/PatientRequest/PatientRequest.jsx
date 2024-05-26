@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './PatientRequest.css';
 
 const PatientRequest = () => {
     const [requests, setRequests] = useState([]);
@@ -53,19 +54,19 @@ const PatientRequest = () => {
     };
 
     return (
-        <div>
+        <div className="admin-panel">
             <h1>Admin Panel</h1>
-            <ul>
+            <ul className="request-list">
                 {requests.map((request) => (
                     <li key={request._id}>
-                        {request.name} - {request.email} - {request.status}-{request._id}
+                        {request.name} - {request.email} - {request.status} - {request._id}
                         <button onClick={() => handleSelectRequest(request)}>Recommend</button>
                     </li>
                 ))}
             </ul>
 
             {selectedRequest && (
-                <div>
+                <div className="recommendation-section">
                     <h2>Recommend Products for {selectedRequest.name}</h2>
                     <div>
                         {products.map(product => (
