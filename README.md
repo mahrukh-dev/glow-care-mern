@@ -10,6 +10,9 @@
 - npm install mongoose
 - npm install multer - to store images in backend folder using admin panel
 - npm install cors - permission to access backend
+- npm i express cors
+- npm i stripe --force
+- npm i dotenv
 
 # admin
 - npm create vite@latest
