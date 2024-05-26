@@ -33,9 +33,9 @@ export const Navbar = () => {
           <Link to='/' style={{ textDecoration: 'none' }}>Shop</Link>
           {menu === "shop" ? <hr /> : <></>}
         </li>
-        <li onClick={() => { setMenu("bundles") }}>
-          <Link to='/bundles' style={{ textDecoration: 'none' }}>Bundles</Link>
-          {menu === "bundles" ? <hr /> : <></>}
+        <li onClick={() => { setMenu("recommendations") }}>
+          <Link to='/recommendations' style={{ textDecoration: 'none' }}>Request Admin</Link>
+          {menu === "recommendations" ? <hr /> : <></>}
         </li>
         <li onClick={() => { setMenu("reviews") }}>
           <Link to='/reviews' style={{ textDecoration: 'none' }}>Reviews</Link>
