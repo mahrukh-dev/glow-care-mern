@@ -11,6 +11,12 @@
 - npm install multer - to store images in backend folder using admin panel
 - npm install cors - permission to access backend
 
+# admin
+- npm create vite@latest
+- npm install
+- npm run dev
+- npm install react-router-dom
+
 # FULL STACK WEB DEVELOPMENT PROJECT
 
 ### *Mah Rukh 210910*
@@ -33,6 +39,7 @@
 - shopContext -- quantity of product added on card
 - Cart Items
 - MongoDB connection
+- Admin Panel - navbar
 
 ### *Qurat ul Ain 210958*
 - Offers
