@@ -73,3 +73,30 @@
     height: 2px;
     background: #283618;
 }
+
+
+@media(max-width:800){
+    .footer{
+        gap:20px;
+    }
+    .footer-logo{
+        gap:10px;
+        align-items: end;
+    }
+    .footer-logo img{
+        width:40px;
+    }
+    .footer-logo p{
+        font-size: 25px;
+    }
+    .footer-links{
+        font-size: 14px;
+        gap: 10px;
+    }
+    .footer-social-icon img{
+        width:22px;   
+    }
+    .footer-copy-right{
+        font-size: 30px;
+    }
+}
