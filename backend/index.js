@@ -174,6 +174,14 @@ app.get('/newcollection', async (req, res) => {
     res.send(newCollection);
 });
 
+// creating endpoint for popular
+app.get('/popular', async (req, res) => {
+    let products = await Product.find({});
+    let popular = products.slice(1).slice(-6);
+    console.log("popular fetched");
+    res.send(popular);
+});
+
 app.listen(port, (error) => {
     if (!error) {
         console.log('Server is running on port: ', port);
