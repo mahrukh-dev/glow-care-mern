@@ -1,10 +1,10 @@
 // src/components/UserRequestForm.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './css/Bundles.css';
+import './css/Recommendations.css';
 import { jwtDecode } from 'jwt-decode';
 
-const Bundles = () => {
+const Recommendations = () => {
   const [userId, setUserID] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -66,4 +66,4 @@ const Bundles = () => {
   );
 };
 
-export default Bundles;
+export default Recommendations;

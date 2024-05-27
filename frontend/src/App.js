@@ -12,7 +12,7 @@ import LoginSignup from './pages/LoginSignup';
 
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Category from './pages/Category';
-import Bundles from './pages/Bundles';
+import Recommendations from './pages/Recommendations';
 import AdminRecom from './pages/AdminRecom';
 import PaymentPage from './pages/PaymentPage';
 
@@ -40,7 +40,7 @@ function App() {
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/signup" element={<LoginSignup />} />
           <Route path="/category" element={<Category />} />
-          <Route path="/recommendations" element={<Bundles /> } />
+          <Route path="/recommendations" element={<Recommendations /> } />
           <Route path="/adminrecom" element={<AdminRecom /> } />
           <Route path="/payment" element={<PaymentPage />} />
         </Routes>
