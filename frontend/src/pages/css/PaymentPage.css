@@ -1,0 +1,78 @@
+.payment-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 60vh;
+    padding: 20px;
+    margin: 30px auto;
+    background: #fef9e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-page-container h2 {
+    color: #283618;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  
+  .payment-page-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .payment-page-container input,
+  .payment-page-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #bb6c25;
+    border-radius: 4px;
+    background-color: #fef9e0;
+    color: #283618;
+    font-size: 16px;
+  }
+  
+  .payment-page-container input {
+    height: 40px;
+  }
+  
+  .payment-page-container textarea {
+    height: 100px;
+  }
+  
+  .payment-page-container input::placeholder,
+  .payment-page-container textarea::placeholder {
+    color: #5f6c37;
+  }
+  
+  .payment-page-container button {
+    align-self: center;
+    background-color: #5f6c37;
+    color: #fef9e0;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .payment-page-container button:hover {
+    background-color: #283618;
+  }
+  
+  @media (max-width: 800px) {
+    .payment-page-container {
+      padding: 10px 20px;
+    }
+  
+    .payment-page-container form {
+      width: 95%;
+    }
+  }
+  
