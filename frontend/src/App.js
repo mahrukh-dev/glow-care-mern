@@ -11,9 +11,9 @@ import LoginSignup from './pages/LoginSignup';
 
 
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import ContactUs from './pages/ContactUs';
+import Category from './pages/Category';
 import Bundles from './pages/Bundles';
-import Reviews from './pages/Reviews';
+import AdminRecom from './pages/AdminRecom';
 import PaymentPage from './pages/PaymentPage';
 
 import categoryOneBanner from './components/assets/images/category_1.jpg';
@@ -39,9 +39,9 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/signup" element={<LoginSignup />} />
-          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/category" element={<Category />} />
           <Route path="/recommendations" element={<Bundles /> } />
-          <Route path="/reviews" element={<Reviews /> } />
+          <Route path="/adminrecom" element={<AdminRecom /> } />
           <Route path="/payment" element={<PaymentPage />} />
         </Routes>
         <Footer/>
