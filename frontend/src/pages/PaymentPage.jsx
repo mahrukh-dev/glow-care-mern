@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../pages/css/PaymentPage.css';
+
 
 const PaymentPage = () => {
   const [formData, setFormData] = useState({
