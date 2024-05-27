@@ -1,3 +1,4 @@
+// src/components/PatientRequest.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './PatientRequest.css';
@@ -56,19 +57,35 @@ const PatientRequest = () => {
     return (
         <div className="admin-panel">
             <h1>Admin Panel</h1>
-            <ul className="request-list">
-                {requests.map((request) => (
-                    <li key={request._id}>
-                        {request.name} - {request.email} - {request.status} - {request._id}
-                        <button onClick={() => handleSelectRequest(request)}>Recommend</button>
-                    </li>
-                ))}
-            </ul>
+            <table className="request-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Skin Type</th>
+                        <th>Issues</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {requests.map((request) => (
+                        <tr key={request._id}>
+                            <td>{request.name}</td>
+                            <td>{request.status}</td>
+                            <td>{request.skinType}</td>
+                            <td>{request.issues}</td>
+                            <td>
+                                <button onClick={() => handleSelectRequest(request)}>Recommend</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
 
             {selectedRequest && (
                 <div className="recommendation-section">
                     <h2>Recommend Products for {selectedRequest.name}</h2>
-                    <div>
+                    <div className="products-list">
                         {products.map(product => (
                             <div key={product.id}>
                                 <input

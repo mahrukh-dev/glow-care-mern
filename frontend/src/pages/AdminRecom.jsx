@@ -1,10 +1,10 @@
 // src/components/UserRecommendations.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './css/Reviews.css';
+import './css/AdminRecom.css';
 import { jwtDecode } from "jwt-decode";
 
-const Reviews = () => {
+const AdminRecom = () => {
     const [recommendation, setRecommendation] = useState(null); // Single recommendation object
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -62,4 +62,4 @@ const Reviews = () => {
     );
 };
 
-export default Reviews;
+export default AdminRecom;

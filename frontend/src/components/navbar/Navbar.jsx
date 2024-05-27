@@ -37,13 +37,13 @@ export const Navbar = () => {
           <Link to='/recommendations' style={{ textDecoration: 'none' }}>Request Admin</Link>
           {menu === "recommendations" ? <hr /> : <></>}
         </li>
-        <li onClick={() => { setMenu("reviews") }}>
-          <Link to='/reviews' style={{ textDecoration: 'none' }}>Reviews</Link>
-          {menu === "reviews" ? <hr /> : <></>}
+        <li onClick={() => { setMenu("adminrecom") }}>
+          <Link to='/adminrecom' style={{ textDecoration: 'none' }}>Admin Recommendations</Link>
+          {menu === "adminrecom" ? <hr /> : <></>}
         </li>
-        <li onClick={() => { setMenu("contactus") }}>
-          <Link to='/contact-us' style={{ textDecoration: 'none' }}>Contact Us</Link>
-          {menu === "contactus" ? <hr /> : <></>}
+        <li onClick={() => { setMenu("category") }}>
+          <Link to='/category' style={{ textDecoration: 'none' }}>Categories</Link>
+          {menu === "category" ? <hr /> : <></>}
         </li>
       </ul>
       <div className="nav-login-cart">

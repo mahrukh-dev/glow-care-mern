@@ -1,10 +1,10 @@
 // src/components/UserRequestForm.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './css/Bundles.css';
+import './css/Recommendations.css';
 import { jwtDecode } from 'jwt-decode';
 
-const Bundles = () => {
+const Recommendations = () => {
   const [userId, setUserID] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -15,10 +15,11 @@ const Bundles = () => {
   });
 
   const handleChange = (e) => {
-    console.log(userId)
+    console.log(userId);
     e.userId = userId;
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const getUserIdFromToken = (token) => {
     console.log('Token:', token);
     if (!token) return null;
@@ -32,16 +33,17 @@ const Bundles = () => {
       return null;
     }
   };
+
   useEffect(() => {
     console.log('Auth token:', localStorage.getItem('auth-token'));
     const userId = getUserIdFromToken(localStorage.getItem('auth-token'));
     setUserID(userId);
     console.log('User ID:', userId);
-  });
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-
       formData.userId = userId;
       await axios.post('http://localhost:4000/createrequest', formData);
       alert('Request submitted successfully');
@@ -54,6 +56,7 @@ const Bundles = () => {
 
   return (
     <div className="user-request-form-container">
+      <h2>Request Doctor for Prescription</h2>
       <form onSubmit={handleSubmit}>
         <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
         <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
@@ -62,8 +65,7 @@ const Bundles = () => {
         <button type="submit">Submit</button>
       </form>
     </div>
-
   );
 };
 
-export default Bundles;
+export default Recommendations;
