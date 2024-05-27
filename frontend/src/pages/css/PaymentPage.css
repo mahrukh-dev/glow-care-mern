@@ -30,7 +30,7 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #bb6c25;
+    border: 1px solid #bb6c25 !important;
     border-radius: 4px;
     background-color: #fef9e0;
     color: #283618;
@@ -52,7 +52,7 @@
   
   .payment-page-container button {
     align-self: center;
-    background-color: #5f6c37;
+    background-color: #5f6c37 !important;
     color: #fef9e0;
     border: none;
     border-radius: 4px;
@@ -63,7 +63,7 @@
   }
   
   .payment-page-container button:hover {
-    background-color: #283618;
+    background-color: #283618 !important;
   }
   
   @media (max-width: 800px) {
