@@ -8,14 +8,14 @@ const ShopCategory = (props) => {
   const { all_products } = React.useContext(ShopContext);
   return (
     <div className="shop-category">
-      <img className='shopcategory-banner' src={props.banner} alt="" />
+      {/* <img className='shopcategory-banner' src={props.banner} alt="" /> */}
       <div className='shopcategory-indextSort'>
-        <p>
+        {/* <p>
           <span>Showing 1-12</span> out of 36 products
-        </p>
-        <div className='shopcategory-sort'>
+        </p> */}
+        {/* <div className='shopcategory-sort'>
           Sort by <img src={dropdown_icon} alt="" />
-        </div>
+        </div> */}
       </div>
       <div className="shopcategory-products">
         {all_products.map((item, i) => {

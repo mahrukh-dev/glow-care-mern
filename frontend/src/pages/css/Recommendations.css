@@ -1,40 +1,77 @@
 .user-request-form-container {
-    max-width: 400px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 60vh;
     padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    background: #FEF9E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.user-request-form-container input[type="text"],
-.user-request-form-container input[type="email"],
-.user-request-form-container input[type="submit"],
+.user-request-form-container h2 {
+    color: #283618;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.user-request-form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.user-request-form-container input,
 .user-request-form-container textarea {
     width: 100%;
-    margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    margin-bottom: 20px; /* Increase space between inputs */
+    border: 1px solid #BB6C25;
+    border-radius: 4px;
+    background-color: #FEF9E0;
+    color: #283618;
+    font-size: 16px;
+}
+
+.user-request-form-container input {
+    height: 40px; /* Add height to inputs */
 }
 
 .user-request-form-container textarea {
-    height: 100px;
+    height: 100px; /* Add height to textarea */
 }
 
-.user-request-form-container input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+.user-request-form-container input::placeholder,
+.user-request-form-container textarea::placeholder {
+    color: #5F6C37;
+}
+
+.user-request-form-container button {
+    align-self: center;
+    background-color: #5F6C37;
+    color: #FEF9E0;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.user-request-form-container input[type="submit"]:hover {
-    background-color: #0056b3;
+.user-request-form-container button:hover {
+    background-color: #283618;
 }
 
-.user-request-form-container input[type="submit"]:focus {
-    outline: none;
-}
+@media(max-width: 800px) {
+    .user-request-form-container {
+        padding: 10px 20px;
+    }
 
+    .user-request-form-container form {
+        width: 95%;
+    }
+}

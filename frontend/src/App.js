@@ -16,9 +16,9 @@ import Recommendations from './pages/Recommendations';
 import AdminRecom from './pages/AdminRecom';
 import PaymentPage from './pages/PaymentPage';
 
-import categoryOneBanner from './components/assets/images/category_1.jpg';
-import categoryTwoBanner from './components/assets/images/category_2.jpg';
-import categoryThreeBanner from './components/assets/images/category_3.jpg';
+import categoryOneBanner from './components/assets/icons/shopping_cat.png';
+import categoryTwoBanner from './components/assets/icons/shopping_cat.png';
+import categoryThreeBanner from './components/assets/icons/shopping_cat.png';
 
 function App() {
   return (
@@ -41,7 +41,7 @@ function App() {
           <Route path="/signup" element={<LoginSignup />} />
           <Route path="/category" element={<Category />} />
           <Route path="/recommendations" element={<Recommendations /> } />
-          <Route path="/adminrecom" element={<AdminRecom /> } />
+          <Route path="/adminrecom" element={<AdminRecom /> } />                                                                                                                                
           <Route path="/payment" element={<PaymentPage />} />
         </Routes>
         <Footer/>

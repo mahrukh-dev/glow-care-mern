@@ -57,14 +57,30 @@ const PatientRequest = () => {
     return (
         <div className="admin-panel">
             <h1>Admin Panel</h1>
-            <ul className="request-list">
-                {requests.map((request) => (
-                    <li key={request._id}>
-                        {request.name} - {request.email} - {request.status} - {request._id}
-                        <button onClick={() => handleSelectRequest(request)}>Recommend</button>
-                    </li>
-                ))}
-            </ul>
+            <table className="request-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Skin Type</th>
+                        <th>Issues</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {requests.map((request) => (
+                        <tr key={request._id}>
+                            <td>{request.name}</td>
+                            <td>{request.status}</td>
+                            <td>{request.skinType}</td>
+                            <td>{request.issues}</td>
+                            <td>
+                                <button onClick={() => handleSelectRequest(request)}>Recommend</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
 
             {selectedRequest && (
                 <div className="recommendation-section">
