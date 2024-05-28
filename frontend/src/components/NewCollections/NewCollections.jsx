@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './NewCollection.css';
 import Item from '../item/Item';
+import React, { useState, useEffect } from 'react';
+import './NewCollection.css';
+import Item from '../item/Item';
 
 const NewCollection = () => {
     const [new_collection, setNew_Collection] = useState([]);
