@@ -2,6 +2,7 @@ const port = 4000;
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const path = require('path');
@@ -11,7 +12,10 @@ app.use(express.json());
 app.use(cors());
 
 // Database connection with mongoDB
-mongoose.connect('mongodb+srv://mahrukhdev:secret123@cluster0.i1eobyn.mongodb.net/glowcare');
+mongoose.connect('mongodb+srv://mahrukhdev:secret123@cluster0.i1eobyn.mongodb.net/glowcare', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 //API Creation
 app.get('/', (req, res) => {
@@ -30,7 +34,6 @@ const upload = multer({ storage: storage });
 // creating upload endpoint for images
 app.use('/images', express.static('upload/images'));
 
-
 // Schema for Creating Products
 const productSchema = new mongoose.Schema({
     id: { type: Number, required: true },
@@ -43,6 +46,7 @@ const productSchema = new mongoose.Schema({
     available: { type: Boolean, default: true },
 });
 const Product = mongoose.model('Product', productSchema);
+
 app.post('/upload', upload.single('image'), (req, res) => {
     if (req.file) {
         res.json({
@@ -76,7 +80,6 @@ app.post('/addproducts', async (req, res) => {
     }
 });
 
-
 // creating API for deleting product
 app.post('/removeproduct', async (req, res) => {
     await Product.findOneAndDelete({ id: req.body.id });
@@ -94,40 +97,51 @@ app.get('/allproducts', async (req, res) => {
     res.send(products);
 });
 
+// creating endpoint for new collections
+app.get('/newcollection', async (req, res) => {
+    let products = await Product.find({});
+    let newCollection = products.slice(-8);
+    console.log("new collection fetched");
+    res.send(newCollection);
+});
+
+// creating endpoint for popular
+app.get('/popular', async (req, res) => {
+    let products = await Product.find({});
+    let popular = products.slice(-6);
+    console.log("popular fetched");
+    res.send(popular);
+});
+
 //creating middleware to fetch user
 const fetchUser = async (req, res, next) => {
     const token = req.header('auth-token');
     if (!token) {
-        res.status(401).send({errors: "Please authenticate using a valid token"})    
-    }
-    else {
+        res.status(401).send({ errors: "Please authenticate using a valid token" });
+    } else {
         try {
-          const data = jwt.verify(token, 'secret_glowcare');
-          req.user = data.user;
-          next();
-        } 
-        catch (error) {
-            res.status(401).send({errors: "Please authenticate using a valid token"})
+            const data = jwt.verify(token, 'secret_glowcare');
+            req.user = data.user;
+            next();
+        } catch (error) {
+            res.status(401).send({ errors: "Please authenticate using a valid token" });
         }
     }
 }
 
 //creating endpoint for adding products to cart
 app.post('/addtocart', fetchUser, async (req, res) => {
-    let userData = await Users.findOne({_id: req.user.id});
+    let userData = await Users.findOne({ _id: req.user.id });
     userData.cartData[req.body.itemId] += 1;
-    await Users.updateOneAndUpdate({_id: req.user.id}, {cartData: userData.cartData});
-    res.send("Added")
+    await Users.updateOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+    res.send("Added");
 });
 
-//creating endpoiny to remove product from cart
+//creating endpoint to remove product from cart
 app.post('/removefromcart', fetchUser, async (req, res) => {
     console.log("removed", req.body.itemId);
-    let userData = await Users.findOne
-    ({
-        _id: req.user.id
-    }); 
-    if(userData.cartData[req.body.itemId] > 0){
+    let userData = await Users.findOne({ _id: req.user.id });
+    if (userData.cartData[req.body.itemId] > 0) {
         userData.cartData[req.body.itemId] -= 1;
     }
     await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
@@ -137,18 +151,16 @@ app.post('/removefromcart', fetchUser, async (req, res) => {
 //creating endpoint to get cart data
 app.post('/getcart', fetchUser, async (req, res) => {
     console.log("get cart");
-    let userData = await Users.findOne({ 
-        _id: req.user.id
-    });
+    let userData = await Users.findOne({ _id: req.user.id });
     res.json(userData.cartData);
 });
 
 //USER SCHEMA
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    email: { type: String, unique: true, required: true},
+    email: { type: String, unique: true, required: true },
     password: { type: String, required: true },
-    cartData : { type: Object, default: {} },
+    cartData: { type: Object, default: {} },
     date: { type: Date, default: Date.now }
 });
 const Users = mongoose.model('Users', userSchema);
@@ -158,15 +170,15 @@ app.post('/signup', async (req, res) => {
     let check = await Users.findOne({ email: req.body.email });
     if (check) {
         return res.status(400).json(
-            { 
-                success: false, 
-                message: 'User already exists with the same email' 
+            {
+                success: false,
+                message: 'User already exists with the same email'
             }
         );
     }
     let cart = {};
-    for (let i=0; i<300; i++){
-        cart[i] = 0;   
+    for (let i = 0; i < 300; i++) {
+        cart[i] = 0;
     }
     const user = new Users({
         name: req.body.username,
@@ -185,16 +197,25 @@ app.post('/signup', async (req, res) => {
     }
 
     const token = jwt.sign(data, 'secret_glowcare');
-    res.json({ success: true, token});
+    res.json({ success: true, token });
 
 });
 
+
+
+// Schema for AdminRecommendation
 const AdminRecommendationSchema = new mongoose.Schema({
-    userRequestId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserRequest' },
+    userRequestId: { type: String }, // Changed to String type
     recommendedProducts: [String],
 });
+const AdminRecommendation = mongoose.model('AdminRecommendation', AdminRecommendationSchema);
 
-const UserRequestSchema = new mongoose.Schema({
+// const AdminRecommendationSchema = new mongoose.Schema({
+//     userRequestId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserRequest' },
+//     recommendedProducts: [String],
+// });
+
+const UserRequestSchema = new Schema({
     name: String,
     email: String,
     skinType: String,
@@ -202,15 +223,14 @@ const UserRequestSchema = new mongoose.Schema({
     userId: String,
     status: { type: String, default: 'pending' },
 });
-const userRequest= mongoose.model('UserRequest', UserRequestSchema);
+const userRequest = mongoose.model('UserRequest', UserRequestSchema);
 const userRecommendation = mongoose.model('AdminRecommendation', AdminRecommendationSchema);
-const AdminRecommendation = mongoose.model('AdminRecommendation', AdminRecommendationSchema);
 
 // Create a new user request
 app.post('/createrequest', async (req, res) => {
-    const { name, email, skinType, issues,userId } = req.body;
-    console.log("body",req.body);
-    const newUserRequest = new userRequest({ name, email, skinType, issues,userId });
+    const { name, email, skinType, issues, userId } = req.body;
+    console.log("body", req.body);
+    const newUserRequest = new userRequest({ name, email, skinType, issues, userId });
     await newUserRequest.save();
     res.status(201).send(newUserRequest);
 });
@@ -233,29 +253,15 @@ app.post('/:id', async (req, res) => {
 
     res.status(201).send(newRecommendation);
 });
+
+
 // Get recommendations for a specific user request
 app.get('/:id', async (req, res) => {
     const userRequestId = req.params.id;
-    const recommendation = await AdminRecommendation.findOne({ userRequestId }).populate('userRequestId');
+    const recommendation = await AdminRecommendation.findOne({ userRequestId }); 
+    // .populate('userRequestId');
     res.status(200).send(recommendation);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //User login endpoint
 app.post('/login', async (req, res) => {
@@ -277,25 +283,9 @@ app.post('/login', async (req, res) => {
             res.json({ success: false, errors: 'Invalid Password' });
         }
     }
-    else{
+    else {
         res.json({ success: false, errors: 'User not found' });
     }
-});
-
-// creating endpoint for new collections
-app.get('/newcollection', async (req, res) => {
-    let products = await Product.find({});
-    let newCollection = products.slice(1).slice(-8);
-    console.log("new collection fetched");
-    res.send(newCollection);
-});
-
-// creating endpoint for popular
-app.get('/popular', async (req, res) => {
-    let products = await Product.find({});
-    let popular = products.slice(1).slice(-6);
-    console.log("popular fetched");
-    res.send(popular);
 });
 
 app.listen(port, (error) => {

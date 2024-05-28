@@ -1,4 +1,3 @@
-// src/components/UserRecommendations.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './css/AdminRecom.css';
@@ -45,19 +44,16 @@ const AdminRecom = () => {
 
     return (
         <div className='user-recommendations-container'>
-            <h1>Admin Recommendation</h1>
-            {recommendation ? (
-                <div>
-                    <h2>Recommendation for Request ID: {recommendation.userRequestId?._id || 'N/A'}</h2>
-                    <ul>
-                        {recommendation.recommendedProducts.map((product, index) => (
-                            <li key={index}>{product}</li>
-                        ))}
-                    </ul>
-                </div>
-            ) : (
-                <p>No recommendation found.</p>
-            )}
+            <h2>Recommendation from the Doctor to use these products:</h2>
+            <ul>
+                {recommendation ? (
+                    recommendation.recommendedProducts.map((product, index) => (
+                        <li key={index}>{product}</li>
+                    ))
+                ) : (
+                    <p>No recommendation found.</p>
+                )}
+            </ul>
         </div>
     );
 };

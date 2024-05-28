@@ -1,9 +1,6 @@
-// src/pages/PaymentPage.jsx
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../pages/css/PaymentPage.css';
-
 
 const PaymentPage = () => {
   const [formData, setFormData] = useState({
@@ -85,9 +82,10 @@ const PaymentPage = () => {
   };
 
   return (
-    <div className="container" style={{ padding: '2rem' }}>
+    <div className="container">
       {!submitted ? (
-        <form onSubmit={handleSubmit}>
+        <form className="payment-form" onSubmit={handleSubmit}>
+          <h2>ENTER YOUR DETAILS FOR THE PAYMENT:</h2>
           <div className="form-group">
             <label htmlFor="firstName">First Name:</label>
             <input type="text" className="form-control" id="firstName" value={formData.firstName} onChange={handleChange} />
@@ -108,12 +106,12 @@ const PaymentPage = () => {
             <label htmlFor="amount">Amount:</label>
             <input type="number" className="form-control" id="amount" value={formData.amount} onChange={handleChange} />
           </div>
-          <button type="submit" className="btn btn-primary" style={{ marginTop: '2rem' }}>
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>
       ) : (
-        isIFrameVisible && <iframe src={iframeSourceUrl} style={{ width: '100%', height: '760px' }}></iframe>
+        isIFrameVisible && <iframe src={iframeSourceUrl} style={{ width: '100%', height: '600px' }}></iframe>
       )}
     </div>
   );
