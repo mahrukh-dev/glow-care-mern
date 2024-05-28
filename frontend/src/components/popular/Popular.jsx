@@ -1,15 +1,11 @@
 import React from "react";
 import './Popular.css';
 import Item from '../item/Item';
-import React from "react";
-import './Popular.css';
-import Item from '../item/Item';
 
 const Popular = () => {
     const [popular_products, setPopular_Products] = React.useState([]);
     const [error, setError] = React.useState(null);
 
-    const [error, setError] = React.useState(null);
 
     React.useEffect(() => {
         fetch('http://localhost:4000/popular')
@@ -47,4 +43,3 @@ const Popular = () => {
 
 export default Popular;
 
-export default Popular;
